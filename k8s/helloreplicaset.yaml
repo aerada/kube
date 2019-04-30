@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hello-dropwizard
+  labels:
+    app: hello-dropwizard
+    tier: hello-dropwizard
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: hello-dropwizard
+  template:
+    metadata:
+      labels:
+        tier: hello-dropwizard
+    spec:
+      containers:
+      - name: hello-dropwizard
+        image: karthi102/hello1:19
+        imagePullPolicy: Always

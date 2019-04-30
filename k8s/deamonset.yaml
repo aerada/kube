@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: "DaemonSet"
+metadata:
+  labels:
+    app: hello-dropwizard
+    ssd: "true"
+  name: hello-dropwizard
+spec:
+  template:
+    metadata:
+      labels:
+        app: hello-dropwizard
+        ssd: "true"
+    spec:
+      nodeSelector:
+        ssd: "true"
+      containers:
+        - name: hello-dropwizard
+          image: karthi102/hello1:19

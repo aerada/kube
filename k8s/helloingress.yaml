@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-dropwizard
+  namespace: dev
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /hello-world
+        backend:
+          serviceName: hello-dropwizard
+          servicePort: 8080
+
